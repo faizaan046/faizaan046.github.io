@@ -50,7 +50,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 0;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -133,6 +133,13 @@ body {
   margin-right: auto;
   padding-left: var(--content-px);
   padding-right: var(--content-px);
+}
+
+#work,
+#experience,
+#about,
+#contact {
+  scroll-margin-top: clamp(6.5rem, 12vh, 9rem);
 }
 
 .section {
