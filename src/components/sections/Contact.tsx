@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, FormEvent } from "react";
-import { Mail, ArrowUpRight, Loader2, CheckCircle, AlertCircle } from "lucide-react";
+import { Mail, ArrowUpRight, FileText, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import { GithubIcon, LinkedinIcon, MediumIcon } from "@/components/ui/BrandIcons";
 import { personalInfo } from "@/data/portfolio";
 
@@ -152,6 +152,17 @@ export default function Contact() {
                 </a>
               )}
 
+
+              <a
+                href={personalInfo.resumePath}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+                id="contact-resume"
+              >
+                <FileText size={15} aria-hidden="true" />
+                View my résumé
+              </a>
 
               {hasGithub && (
                 <a
