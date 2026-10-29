@@ -81,6 +81,7 @@ export interface ExperienceItem {
   role: string;
   organization: string;
   dates: string;      // e.g. "Aug 2023 – Present" or "[Add dates]"
+  location?: string;
   description: string;
   highlights?: string[];
 }
