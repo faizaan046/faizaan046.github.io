@@ -81,6 +81,7 @@ export default function Contact() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(12, 1fr)",
+            alignItems: "start",
             gap: "clamp(2rem, 5vw, 4rem)",
           }}
           className="contact-grid"
@@ -250,6 +251,7 @@ export default function Contact() {
                 gap: "1.25rem",
                 backgroundColor: "var(--bg)",
                 padding: "2rem",
+                marginTop: 0,
                 borderRadius: "8px",
                 border: "1px solid var(--bd)",
               }}
