@@ -4,7 +4,6 @@ import { useState, useRef, FormEvent } from "react";
 import { Mail, ArrowUpRight, FileText, Loader2, CheckCircle, AlertCircle } from "lucide-react";
 import { GithubIcon, LinkedinIcon, MediumIcon } from "@/components/ui/BrandIcons";
 import { personalInfo } from "@/data/portfolio";
-import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function Contact() {
   const hasEmail = Boolean(personalInfo.email);
@@ -15,49 +14,40 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
-
-  const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+  const formId = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID;
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isSubmitting) return;
 
-    if (turnstileSiteKey && !turnstileToken) {
-      setError("Please complete the captcha.");
-      return;
-    }
-
     setIsSubmitting(true);
     setError(null);
 
     const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-      website: formData.get("website"), // Honeypot field
-      turnstileToken,
-    };
+    if (!formId) {
+      setError("The contact form is not yet configured. Please use the email link.");
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(`https://formspree.io/f/${formId}`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: formData,
+        headers: { Accept: "application/json" },
       });
-
       const result = await res.json();
-
       if (!res.ok) {
-        throw new Error(result.error || "Failed to send message.");
+        throw new Error(
+          result.errors?.[0]?.message || result.error || "Failed to send message."
+        );
       }
 
       setSuccess(true);
       formRef.current?.reset();
-    } catch (err: any) {
-      setError(err.message || "An unexpected error occurred.");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "An unexpected error occurred.");
     } finally {
       setIsSubmitting(false);
     }
@@ -343,14 +333,10 @@ export default function Contact() {
                     />
                   </div>
                   
-                  {turnstileSiteKey && (
-                     <Turnstile
-                       siteKey={turnstileSiteKey}
-                       onSuccess={(token) => setTurnstileToken(token)}
-                       options={{
-                         size: "flexible"
-                       }}
-                     />
+                  {!formId && (
+                    <p role="status" style={{ fontSize: "0.875rem", color: "var(--t2)" }}>
+                      The contact form is being configured. Please use the email link for now.
+                    </p>
                   )}
 
                   {error && (
@@ -363,7 +349,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     className="btn-primary"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !formId}
                     style={{
                       marginTop: "0.5rem",
                       justifyContent: "center",
