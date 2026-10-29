@@ -76,12 +76,23 @@ export default function Experience() {
                   lineHeight: 1.5,
                 }}
               >
-                {item.dates || (
+              {item.dates || (
                   <span style={{ color: "var(--bd)", fontStyle: "italic" }}>
                     Add dates
                   </span>
                 )}
               </span>
+              {item.location && (
+                  <span style={{
+                      display: "block",
+                      fontSize: "0.8125rem",
+                      color: "var(--t2)",
+                      marginTop: "0.5rem",
+                }}
+              >
+              {item.location}
+                </span>
+                )}
             </div>
 
             {/* Content */}
