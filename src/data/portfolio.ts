@@ -106,8 +106,9 @@ export const research: ResearchItem[] = [];
 export const experience: ExperienceItem[] = [
   {
     id: "instructional-design",
-    role: "Instructional Design Student Assistant",
+    role: "Instructional Design Assistant",
     organization: "University of Texas at Arlington",
+    location: "Remote - Arlington,TX"
     dates: "Sept 2026 to Present",
     description:
       "Accessibility remediation, digital learning material development, captioning workflows, and document quality assurance for academic content.",
@@ -117,19 +118,11 @@ export const experience: ExperienceItem[] = [
     id: "parking-transportation",
     role: "Parking & Transportation Student Assistant",
     organization: "University of Texas at Arlington",
+    location: "Onsite - Arlington,TX"
     dates: "Jan 2026 to Sept 2026",
     description:
-      "Provided operational support for campus parking and transportation services, assisting students and faculty with permit inquiries, and managing traffic flow during university events.",
-    highlights: [],
-  },
-  {
-    id: "it-assistant",
-    role: "IT Assistant",
-    organization: "Diamond House Pvt Ltd",
-    dates: "Nov 2023 to Dec 2024",
-    description:
-      "Technical support, point-of-sale system maintenance, hardware troubleshooting, and IT infrastructure assistance.",
-    highlights: [],
+      "Managed semester-based bicycle lending operations, maintained structured datasets of student borrowers and equipment inventory, and tracked loan transactions to support accurate recordkeeping and efficient resource allocation." 
+  highlights: [],
   },
 ];
 
