@@ -10,6 +10,7 @@ export default function Contact() {
   const hasGithub = Boolean(personalInfo.github);
   const hasLinkedin = Boolean(personalInfo.linkedin);
   const hasMedium = Boolean(personalInfo.medium);
+  const hasTwitter = Boolean(personalInfo.twitter);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -151,8 +152,9 @@ export default function Contact() {
                 </a>
               )}
 
+
               <a
-                href={personalInfo.resumePath || "#"}
+                href={personalInfo.resumePath}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"
@@ -185,6 +187,15 @@ export default function Contact() {
                 >
                   <LinkedinIcon size={15} aria-hidden="true" />
                   LinkedIn
+                </a>
+              )}
+
+              {hasTwitter && (
+                <a href={personalInfo.twitter} target="_blank" rel="noopener noreferrer" className="btn-secondary" id="contact-twitter">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l7.3-8.5L1.9 2h6.5l4.5 6.9L18.9 2Zm-1.1 18h1.8L7.4 3.9H5.5L17.8 20Z"/>
+                  </svg>
+                  Twitter / X
                 </a>
               )}
 

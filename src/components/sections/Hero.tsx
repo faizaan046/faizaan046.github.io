@@ -1,25 +1,26 @@
 import {
   ArrowRight,
-  Download,
   MapPin,
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/BrandIcons";
 import { personalInfo } from "@/data/portfolio";
 
 export default function Hero() {
-  const hasResume = Boolean(personalInfo.resumePath);
   const hasGithub = Boolean(personalInfo.github);
   const hasLinkedin = Boolean(personalInfo.linkedin);
+  const hasTwitter = Boolean(personalInfo.twitter);
 
   return (
     <section
       aria-labelledby="hero-title"
+      className="hero-charminar-section"
       style={{
         paddingTop: "clamp(5rem, 12vw, 9rem)",
         paddingBottom: "clamp(4rem, 10vw, 7rem)",
       }}
     >
-      <div className="container">
+      <img src="/charminar-outline.svg" alt="" aria-hidden="true" className="hero-charminar-art" />
+      <div className="container hero-charminar-content">
         {/* Eyebrow */}
         <p className="mono-label" style={{ marginBottom: "1.75rem" }}>
           Computer vision · Machine learning · Software engineering
@@ -78,17 +79,6 @@ export default function Hero() {
             <ArrowRight size={15} aria-hidden="true" />
           </a>
 
-          {hasResume ? (
-            <a
-              href={personalInfo.resumePath}
-              download
-              className="btn-secondary"
-              id="hero-download-resume"
-            >
-              <Download size={15} aria-hidden="true" />
-              Download résumé
-            </a>
-          ) : null}
 
           {hasGithub ? (
             <a
@@ -100,6 +90,21 @@ export default function Hero() {
               id="hero-github"
             >
             <GithubIcon size={16} aria-hidden="true" />
+            </a>
+          ) : null}
+
+          {hasTwitter ? (
+            <a
+              href={personalInfo.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-icon"
+              aria-label="Twitter/X profile"
+              id="hero-twitter"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l7.3-8.5L1.9 2h6.5l4.5 6.9L18.9 2Zm-1.1 18h1.8L7.4 3.9H5.5L17.8 20Z"/>
+              </svg>
             </a>
           ) : null}
 
@@ -139,6 +144,23 @@ export default function Hero() {
           </span>
         </div>
       </div>
+      <style>{`
+        .hero-charminar-section { position: relative; overflow: hidden; }
+        .hero-charminar-content { position: relative; z-index: 1; }
+        .hero-charminar-art { display: none; pointer-events: none; }
+        @media (min-width: 1024px) {
+          .hero-charminar-art {
+            display: block;
+            position: absolute;
+            right: -175px;
+            bottom: 0;
+            width: 350px;
+            height: auto;
+            opacity: 0.32;
+            z-index: 0;
+          }
+        }
+      `}</style>
     </section>
   );
 }

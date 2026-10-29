@@ -16,6 +16,7 @@ export interface PersonalInfo {
   github: string;
   linkedin: string;
   medium?: string;
+  twitter?: string;
   resumePath: string; // e.g. "/resume/faizaan_resume.pdf" — add file to public/resume/
   heroHeadline: string;
   heroParagraph1: string;
