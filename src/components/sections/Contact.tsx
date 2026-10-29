@@ -2,7 +2,7 @@
 
 import { useState, useRef, FormEvent } from "react";
 import { Mail, ArrowUpRight, FileText, Loader2, CheckCircle, AlertCircle } from "lucide-react";
-import { GithubIcon, LinkedinIcon, MediumIcon } from "@/components/ui/BrandIcons";
+import { GithubIcon, LinkedinIcon, MediumIcon, TwitterIcon } from "@/components/ui/BrandIcons";
 import { personalInfo } from "@/data/portfolio";
 
 export default function Contact() {
@@ -81,6 +81,7 @@ export default function Contact() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(12, 1fr)",
+            alignItems: "start",
             gap: "clamp(2rem, 5vw, 4rem)",
           }}
           className="contact-grid"
@@ -192,10 +193,8 @@ export default function Contact() {
 
               {hasTwitter && (
                 <a href={personalInfo.twitter} target="_blank" rel="noopener noreferrer" className="btn-secondary" id="contact-twitter">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l7.3-8.5L1.9 2h6.5l4.5 6.9L18.9 2Zm-1.1 18h1.8L7.4 3.9H5.5L17.8 20Z"/>
-                  </svg>
-                  Twitter / X
+                  <TwitterIcon size={15} aria-hidden="true" />
+                  Twitter
                 </a>
               )}
 
@@ -250,6 +249,7 @@ export default function Contact() {
                 gap: "1.25rem",
                 backgroundColor: "var(--bg)",
                 padding: "2rem",
+                marginTop: 0,
                 borderRadius: "8px",
                 border: "1px solid var(--bd)",
               }}
