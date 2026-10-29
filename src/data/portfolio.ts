@@ -20,6 +20,7 @@ export const personalInfo: PersonalInfo = {
   github: "https://github.com/faizaan046",
   linkedin: "https://www.linkedin.com/in/faizaanshaik/",
   medium: "https://medium.com/@shaikfaizaanullah",
+  twitter: "",
   resumePath: "/resume/resume.pdf",
   heroHeadline: "Hi, I'm Faizaan.",
   heroParagraph1:
