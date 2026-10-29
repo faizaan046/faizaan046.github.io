@@ -28,6 +28,15 @@ export const metadata: Metadata = {
     "UT Arlington",
     "Portfolio",
   ],
+  icons: {
+    icon: [
+    {
+      url: "/icon.svg?v=2",
+      type: "image/svg+xml",
+    },
+  ],
+  },
+  
   openGraph: {
     title: `${personalInfo.name} — Portfolio`,
     description: personalInfo.metaDescription,
