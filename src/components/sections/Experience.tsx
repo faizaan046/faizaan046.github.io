@@ -142,22 +142,6 @@ export default function Experience() {
                 >
                   {item.description}
                 </p>
-              {item.highlights && item.highlights.length > 0 && (
-                  <ul
-                    style={{
-                      marginTop: "0.75rem",
-                      paddingLeft: "1.25rem",
-                      color: "var(--t2)",
-                      fontSize: "0.9375rem",
-                      lineHeight: 1.7,
-                      listStyleType: "disc",
-                    }}
-                  >
-              {item.highlights.map((highlight, index) => (
-                <li key={index}>{highlight}</li>
-              ))}
-              </ul>
-                )}
               ) : (
                 <p
                   style={{
