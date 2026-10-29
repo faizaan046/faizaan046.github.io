@@ -241,6 +241,17 @@ body {
   color: var(--ac);
 }
 
+.btn-icon svg,
+.btn-secondary svg {
+  transition: color 0.15s ease, fill 0.15s ease;
+}
+
+.btn-icon:hover svg,
+.btn-secondary:hover svg {
+  color: var(--ac);
+  fill: currentColor;
+}
+
 
 .link-underline {
   color: var(--ac);

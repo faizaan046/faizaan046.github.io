@@ -239,7 +239,7 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Contact Form */}
-          <div style={{ gridColumn: "span 6" }} className="col-full">
+          <div style={{ gridColumn: "span 6" }} className="col-full contact-form-column">
             <form
               ref={formRef}
               onSubmit={handleSubmit}
@@ -387,6 +387,10 @@ export default function Contact() {
       </div>
 
       <style>{`
+        @media (min-width: 769px) {
+          .contact-form-column { padding-top: 2rem; }
+        }
+
         @keyframes spin {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
