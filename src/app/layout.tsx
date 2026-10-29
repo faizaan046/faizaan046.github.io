@@ -29,14 +29,8 @@ export const metadata: Metadata = {
     "Portfolio",
   ],
   icons: {
-    icon: [
-    {
-      url: "/icon.svg?v=2",
-      type: "image/svg+xml",
-    },
-  ],
+    icon: [{ url: "/icon.svg?v=3", type: "image/svg+xml" }],
   },
-  
   openGraph: {
     title: `${personalInfo.name} — Portfolio`,
     description: personalInfo.metaDescription,
