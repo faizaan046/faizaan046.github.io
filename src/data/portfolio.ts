@@ -24,8 +24,8 @@ export const personalInfo: PersonalInfo = {
   resumePath: "/resume/resume.pdf",
   heroHeadline: "Hi, I'm Faizaan.",
   heroParagraph1:
-    "I'm a Computer Science master's student at UT Arlington, exploring computer vision, machine learning, and the engineering behind intelligent systems.",
-  heroParagraph2: "I enjoy turning complex ideas into useful, working software.",
+    "I'm a graduate student pursuing a degree in Computer Science at the University of Texas at Arlington, specializing in Intelligent Systems and Software Engineering.",
+  heroParagraph2: "I enjoy creating software that is actually useful.",
   metaDescription:
     "FaizaanUllah Shaik — Computer Science graduate student at UT Arlington exploring machine learning, computer vision, and useful software.",
 };
