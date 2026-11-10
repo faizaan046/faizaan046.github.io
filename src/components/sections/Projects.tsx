@@ -269,6 +269,23 @@ function ProjectThree({ project }: { project: Project }) {
           )}
         </div>
 
+        {project.role && (
+          <p style={{ fontSize: "0.9375rem", fontWeight: 600, color: "var(--tx)", marginBottom: "0.375rem" }}>
+            {project.role}
+          </p>
+        )}
+        {project.context && (
+          <p style={{ fontSize: "0.8125rem", color: "var(--t2)", marginBottom: "1.25rem", lineHeight: 1.6 }}>
+            {project.context}
+          </p>
+        )}
+        {project.highlights && project.highlights.length > 0 && (
+          <ul style={{ paddingLeft: "1.25rem", margin: "0 0 2rem", color: "var(--t2)", fontSize: "0.9375rem", lineHeight: 1.7 }}>
+            {project.highlights.map((highlight, index) => (
+              <li key={index} style={{ marginBottom: "0.375rem" }}>{highlight}</li>
+            ))}
+          </ul>
+        )}
         <ProjectImage image={project.image} className="w-full" />
       </div>
     </article>
