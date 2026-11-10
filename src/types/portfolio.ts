@@ -50,6 +50,9 @@ export interface Project {
   status: ProjectStatus;
   problem: string;
   contribution: string;
+  role?: string;
+  context?: string;
+  highlights?: string[];
   stack: string[];
   links: ProjectLink[];
   image: ProjectImage;
