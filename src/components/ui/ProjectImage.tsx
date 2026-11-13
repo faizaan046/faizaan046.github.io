@@ -50,8 +50,15 @@ export default function ProjectImage({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-sm ${className}`}
-      style={{ aspectRatio: `${image.width} / ${image.height}` }}
+      className={className}
+      style={{
+        position: "relative",
+        width: "100%",
+        overflow: "hidden",
+        borderRadius: "0.125rem",
+        backgroundColor: "var(--sf)",
+        aspectRatio: `${image.width} / ${image.height}`,
+      }}
     >
       <Image
         src={image.src}
@@ -59,7 +66,7 @@ export default function ProjectImage({
         fill
         priority={priority}
         sizes="(max-width: 768px) 100vw, (max-width: 1120px) 60vw, 640px"
-        className="object-cover"
+        style={{ objectFit: "contain", objectPosition: "center" }}
         onError={() => setHasError(true)}
       />
     </div>
