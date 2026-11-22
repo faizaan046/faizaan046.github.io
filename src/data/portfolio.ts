@@ -33,25 +33,28 @@ export const personalInfo: PersonalInfo = {
 
 export const projects: Project[] = [
   {
-    id: "ai-incident-assistant",
+    id: "odyssey-ithaca-bound",
     index: 1,
-    title: "AI Incident Assistant",
-    category: "Applied AI / Backend",
+    title: "Odyssey: Ithaca Bound",
+    category: "HackUTA 2026 / AI-Powered Travel",
     status: "completed",
     problem:
-      "Operations teams face alert fatigue when diagnosing production incidents. Manual investigation is slow, context-switching is costly, and critical signals are buried in logs and metrics.",
+      "Group trips are often planned through scattered messages, while the journey itself becomes a list of stops. We wanted to make exploring together more interactive and rewarding.",
     contribution:
-      "An AI-powered incident analysis assistant built with Python and FastAPI. The system ingests incident context and surfaces relevant diagnostics, suggested root causes, and recommended actions through a structured API.",
-    stack: ["Python", "FastAPI"],
-    links: [],
+      "Built Odyssey with a three-person HackUTA team, focusing on frontend screens, pixel-inspired UI, and the trip experience. The cross-platform app uses an AI Oracle to plan themed checkpoints, lets friends join a shared crew, tracks progress as destinations are reached, and offers a fog mode that unlocks upcoming stops as the journey unfolds.",
+    stack: ["React Native", "Expo", "TypeScript", "Supabase", "Gemini API", "Location Services"],
+    links: [
+      { label: "Devpost", url: "https://devpost.com/software/odyssey-t4095i", type: "external" },
+      { label: "GitHub", url: "https://github.com/1-apex/theodyssey", type: "github" },
+    ],
     featured: true,
     image: {
-      src: "",
-      alt: "AI Incident Assistant interface showing incident analysis dashboard",
-      width: 1600,
-      height: 900,
-      placeholderLabel: "Add project screenshot",
-      placeholderDimensions: "Recommended 1600 × 900",
+      src: "/images/projects/odyssey-ithaca-bound.jpeg",
+      alt: "Odyssey: Ithaca Bound, a Greek mythology-inspired group travel game with AI itineraries and fog-of-war checkpoints",
+      width: 2048,
+      height: 1143,
+      placeholderLabel: "Odyssey: Ithaca Bound",
+      placeholderDimensions: "HackUTA 2026 project screenshot",
     },
   },
   {
