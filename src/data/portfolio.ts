@@ -49,10 +49,10 @@ export const projects: Project[] = [
     ],
     featured: true,
     image: {
-      src: "",
+      src: "/images/projects/odyssey-ithaca-bound.jpeg",
       alt: "Odyssey: Ithaca Bound, a Greek mythology-inspired group travel game with AI itineraries and fog-of-war checkpoints",
-      width: 1600,
-      height: 900,
+      width: 2048,
+      height: 1143,
       placeholderLabel: "Odyssey: Ithaca Bound",
       placeholderDimensions: "HackUTA 2026 project screenshot",
     },
