@@ -144,6 +144,8 @@ export const skills: SkillCategory[] = [
       "NumPy",
       "Deep Learning",
       "CNNs",
+      "Claude Code",
+      "Cursor AI"
     ],
   },
   {
